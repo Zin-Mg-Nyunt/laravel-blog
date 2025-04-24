@@ -9,7 +9,12 @@
 <body>
     <div class="blog-detail-container">
         <a href="/">&larr; Back to all blogs</a>
-        <?= $blog;?>
+        <h2>
+            <?= $blog->title;?>
+        </h2>
+        <p>
+            <?= $blog->body;?>
+        </p>
     </div>
 </body>
 </html>
