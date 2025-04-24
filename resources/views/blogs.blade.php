@@ -1,8 +1,7 @@
-@extends('layout')
-@section('title')
-    <title>All Blogs</title>
-@endsection
-@section('content') 
+<x-layout>
+    <x-slot name="title">
+        <title>All Blogs</title>
+    </x-slot>
     <div class="blog-list">
         @foreach ($blogs as $blog) 
             <div class="blog-card">
@@ -20,4 +19,4 @@
             </div>
         @endforeach
     </div>
-@endsection
+</x-layout>
