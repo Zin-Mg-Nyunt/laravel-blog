@@ -10,10 +10,10 @@
     <div class="blog-detail-container">
         <a href="/">&larr; Back to all blogs</a>
         <h2>
-            <?= $blog->title;?>
+            {{$blog->title}}
         </h2>
         <p>
-            <?= $blog->body;?>
+            {!!$blog->body!!}
         </p>
     </div>
 </body>

@@ -8,18 +8,21 @@
 </head>
 <body>
     <div class="blog-list">
-        <?php foreach ($blogs as $blog) :?>
-        <div class="blog-card">
-            <h2>
-                <a href="/blogs/<?= $blog->slug?>">
-                    <?= $blog->title?>
-                </a>
-            </h2>
-            <p>
-                <?= $blog->intro?>
-            </p>
-        </div>
-        <?php endforeach; ?>
+        @foreach ($blogs as $blog) 
+            <div class="blog-card">
+                <h2>
+                    <a href="/blogs/<?= $blog->slug?>">
+                        {{$blog->title}}
+                    </a>
+                </h2>
+                <p>
+                    posted at - {{$blog->date}}
+                </p>
+                <p>
+                    {{$blog->intro}}
+                </p>
+            </div>
+        @endforeach
     </div>
 </body>
 </html>

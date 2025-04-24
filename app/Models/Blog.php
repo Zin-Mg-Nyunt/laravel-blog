@@ -10,28 +10,24 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
         public $slug;
         public $intro;
         public $body;
-        function __construct($title,$slug,$intro,$body)
+        public $date;
+        function __construct($title,$slug,$intro,$body,$date)
         {
             $this->title = $title;
             $this->slug = $slug;
             $this->intro = $intro;
             $this->body = $body;
+            $this->date = $date;
         }
         public static function all(){
             return collect(File::files(resource_path("blogs")))
                 ->map(function($file){
                     $obj=YamlFrontMatter::parseFile($file);
-                    return new Blog($obj->title,$obj->slug,$obj->intro,$obj->body());
-                });
+                    return new Blog($obj->title,$obj->slug,$obj->intro,$obj->body(),$obj->date);
+                })
+                ->sortByDesc('date');
         }
         public static function find($slug){
-            // $path = resource_path("blogs/$slug.html");
-            // if (!file_exists($path)) {
-            //     abort(404);
-            // }
-            // return cache()->remember("blogs.$slug",now()->addMinutes(2),function() use($path){
-            //    return file_get_contents($path);
-            // });
             return static::all()->firstWhere('slug',$slug);
         }
     }
