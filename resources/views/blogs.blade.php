@@ -6,7 +6,7 @@
         @foreach ($blogs as $blog) 
             <div class="blog-card">
                 <h2>
-                    <a href="/blogs/{{$blog->id}}">
+                    <a href="/blogs/{{$blog->slug}}">
                         {{$blog->title}}
                     </a>
                 </h2>
@@ -18,5 +18,6 @@
                 </p>
             </div>
         @endforeach
+        
     </div>
 </x-layout>
