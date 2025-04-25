@@ -11,7 +11,7 @@
                     </a>
                 </h2>
                 <p>
-                    posted at - {{$blog->date}}
+                    posted at - {{$blog->created_at->diffForHumans()}}
                 </p>
                 <p>
                     {{$blog->intro}}
