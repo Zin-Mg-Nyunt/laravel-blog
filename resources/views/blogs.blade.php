@@ -6,7 +6,7 @@
         @foreach ($blogs as $blog) 
             <div class="blog-card">
                 <h2>
-                    <a href="/blogs/<?= $blog->slug?>">
+                    <a href="/blogs/{{$blog->id}}">
                         {{$blog->title}}
                     </a>
                 </h2>
