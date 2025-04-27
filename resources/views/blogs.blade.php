@@ -10,6 +10,9 @@
                         {{$blog->title}}
                     </a>
                 </h2>
+                <span>
+                    {{$blog->category->name}}
+                </span>
                 <p>
                     posted at - {{$blog->created_at->diffForHumans()}}
                 </p>

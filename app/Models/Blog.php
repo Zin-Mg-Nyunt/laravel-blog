@@ -9,4 +9,7 @@ class Blog extends Model
     //
     // protected $fillable = ['title','intro','body','slug'];
     protected $guarded=['id'];
+    public function category(){
+        return $this->belongsTo(Category::class); //Category::class this syntx is for namespace
+    }
 }
