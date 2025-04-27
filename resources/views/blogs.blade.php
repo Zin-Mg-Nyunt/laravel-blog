@@ -11,7 +11,9 @@
                     </a>
                 </h2>
                 <span>
-                    {{$blog->category->name}}
+                    <a href="/categories/{{$blog->category->slug}}">
+                        {{$blog->category->name}}
+                    </a>
                 </span>
                 <p>
                     posted at - {{$blog->created_at->diffForHumans()}}
