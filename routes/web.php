@@ -7,14 +7,9 @@ use App\Models\Category;
 
 Route::get('/', function () {
     return view('blogs',[
-        "blogs"=>Blog::with('category')->get()
+        "blogs"=>Blog::all()
     ]);
 });
-Route::get('/blogs/{blog:slug}',function(Blog $blog){ 
-    return view('blog',[
-        "blog"=>$blog
-    ]);
-})->where('blog','[A-z\d\-_]+');
 Route::get('/categories/{category:slug}',function(Category $category){
     return view('blogs',[
         "blogs"=>$category->blogs
@@ -25,3 +20,8 @@ Route::get('/authors/{author}',function(Author $author){
         "blogs"=>$author->blogs
     ]);
 });
+Route::get('/blogs/{blog:slug}',function(Blog $blog){ 
+    return view('blog',[
+        "blog"=>$blog
+    ]);
+})->where('blog','[A-z\d\-_]+');
