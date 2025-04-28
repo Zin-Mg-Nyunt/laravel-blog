@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,6 +20,7 @@ class BlogFactory extends Factory
     {
         return [
             'category_id'=>Category::factory(),
+            'author_id'=>Author::factory(),
             'title'=>fake()->word(),
             'slug'=>fake()->slug(),
             'intro'=>fake()->sentence(),

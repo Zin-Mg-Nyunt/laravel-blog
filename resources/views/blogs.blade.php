@@ -10,6 +10,13 @@
                         {{$blog->title}}
                     </a>
                 </h2>
+                <p>
+                    Author - <span>
+                        <a href="/authors/{{$blog->author->id}}">
+                            {{$blog->author->name}}
+                        </a>
+                    </span>
+                </p>
                 <span>
                     <a href="/categories/{{$blog->category->slug}}">
                         {{$blog->category->name}}

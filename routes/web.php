@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Author;
 use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
 use App\Models\Category;
@@ -17,5 +18,10 @@ Route::get('/blogs/{blog:slug}',function(Blog $blog){
 Route::get('/categories/{category:slug}',function(Category $category){
     return view('blogs',[
         "blogs"=>$category->blogs
+    ]);
+});
+Route::get('/authors/{author}',function(Author $author){
+    return view('blogs',[
+        "blogs"=>$author->blogs
     ]);
 });
