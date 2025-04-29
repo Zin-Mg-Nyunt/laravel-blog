@@ -21,6 +21,7 @@ class AuthorFactory extends Factory
     {
         return [
             'name'=>fake()->name(),
+            'userName'=>fake()->userName(),
             'email'=>fake()->unique()->safeEmail(),
             'password' => static::$password ??= Hash::make('password'),
         ];

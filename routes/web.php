@@ -7,7 +7,7 @@ use App\Models\Category;
 
 Route::get('/', function () {
     return view('blogs',[
-        "blogs"=>Blog::all()
+        "blogs"=>Blog::latest()->get()
     ]);
 });
 Route::get('/categories/{category:slug}',function(Category $category){
@@ -15,7 +15,7 @@ Route::get('/categories/{category:slug}',function(Category $category){
         "blogs"=>$category->blogs
     ]);
 });
-Route::get('/authors/{author}',function(Author $author){
+Route::get('/authors/{author:userName}',function(Author $author){
     return view('blogs',[
         "blogs"=>$author->blogs
     ]);

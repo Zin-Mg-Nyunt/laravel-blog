@@ -12,7 +12,7 @@
                 </h2>
                 <p>
                     Author - <span>
-                        <a href="/authors/{{$blog->author->id}}">
+                        <a href="/authors/{{$blog->author->userName}}">
                             {{$blog->author->name}}
                         </a>
                     </span>

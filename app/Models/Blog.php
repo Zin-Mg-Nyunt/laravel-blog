@@ -15,6 +15,6 @@ class Blog extends Model
         return $this->belongsTo(Category::class); //Category::class this syntx is for namespace
     }
     public function author(){
-        return $this->belongsTo(Author::class,'user_id');
+        return $this->belongsTo(Author::class);
     }
 }
