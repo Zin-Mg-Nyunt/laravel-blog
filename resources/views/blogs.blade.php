@@ -33,9 +33,8 @@
         
     </div>
 </x-layout> --}}
-
 <x-layout>
   <x-hero/>
-  <x-blogsSection/>
+  <x-blogsSection :blogs="$blogs"/>
   <x-subscribe/>
 </x-layout>

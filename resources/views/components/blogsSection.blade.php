@@ -26,5 +26,11 @@
             </button>
           </div>
         </form>
-        <x-blogCard />
+        <div class="row">
+          @foreach ($blogs as $blog)            
+            <div class="col-md-4 mb-4">
+              <x-blogCard :blog="$blog"/>
+            </div>
+          @endforeach
+        </div>
     </section>
