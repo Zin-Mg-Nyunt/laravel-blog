@@ -6,8 +6,12 @@ use App\Models\Blog;
 use App\Models\Category;
 
 Route::get('/', function () {
+    $blogs=Blog::latest();
+    if (request('search')) {
+        $blogs=$blogs->where('title','LIKE','%'.request('search').'%');
+    }
     return view('blogs',[
-        "blogs"=>Blog::latest()->get(),
+        "blogs"=>$blogs->get(),
         "categories"=>Category::all()
     ]);
 });
