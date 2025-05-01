@@ -1,5 +1,9 @@
 <x-layout>
   <x-hero/>
-  <x-blogsSection :blogs="$blogs" data="data"/>
+  <x-blogsSection 
+    :blogs="$blogs" 
+    :categories="$categories" 
+    :currentCategory=$currentCategory??null
+  />
   <x-subscribe/>
 </x-layout>

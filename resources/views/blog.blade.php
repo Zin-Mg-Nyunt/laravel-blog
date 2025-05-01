@@ -11,8 +11,14 @@
             />
             <h3 class="my-3">{{$blog->title}}</h3>
             <div>
-                <div>Author - {{$blog->author->name}}</div>
-                <div class="badge bg-primary">{{$blog->category->name}}</div>
+                <div>Author - 
+                    <a href="/authors/{{$blog->author->userName}}">
+                        {{$blog->author->name}}
+                    </a>
+                </div>
+                <a href="/categories/{{$blog->category->slug}}">
+                    <span class="badge bg-primary">{{$blog->category->name}}</span>
+                </a>
                 <div class="text-secondary">{{$blog->created_at->diffForHumans()}}</div>
             </div>
             <p class="lh-md text-start mt-3">
