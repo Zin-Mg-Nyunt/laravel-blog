@@ -1,3 +1,5 @@
+@props(['blog'])
+<!-- blog card -->
 <div class="card">
     <img
           src="https://creativecoder.s3.ap-southeast-1.amazonaws.com/blogs/GOLwpsybfhxH0DW8O6tRvpm4jCR6MZvDtGOFgjq0.jpg"
@@ -16,6 +18,6 @@
           <p class="card-text">
             {{$blog->intro}}
           </p>
-          <a href="./single.html" class="btn btn-primary">Read More</a>
+          <a href="/blogs/{{$blog->slug}}" class="btn btn-primary">Read More</a>
     </div>
 </div>
