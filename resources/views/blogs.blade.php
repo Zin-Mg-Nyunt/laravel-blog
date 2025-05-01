@@ -1,4 +1,4 @@
-<x-layout>
+{{-- <x-layout>
     <x-slot name="title">
         <title>All Blogs</title>
     </x-slot>
@@ -32,4 +32,10 @@
         @endforeach
         
     </div>
+</x-layout> --}}
+
+<x-layout>
+  <x-hero/>
+  <x-blogsSection/>
+  <x-subscribe/>
 </x-layout>
