@@ -24,6 +24,11 @@ class Blog extends Model
                 ->orWhere('body','LIKE','%'.$search.'%');
             });
         });
+        $query->when($filter['category']??false,function($query,$slug){
+            $query->whereHas('category',function($query) use($slug){
+                $query->where('slug',$slug);
+            });
+        });
         return $query;
     }
 }
