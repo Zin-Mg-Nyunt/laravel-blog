@@ -7,11 +7,4 @@ use App\Models\Category;
 
 Route::get('/', [BlogController::class,'index']);
 
-Route::get('/authors/{author:userName}',function(Author $author){
-    return view('blogs',[
-        "blogs"=>$author->blogs,
-        "categories"=>Category::all()
-    ]);
-});
-
 Route::get('/blogs/{blog:slug}',[BlogController::class,'show']);

@@ -29,6 +29,11 @@ class Blog extends Model
                 $query->where('slug',$slug);
             });
         });
-        return $query;
+        $query->when($filter['author']??false,function($query,$userName){
+            $query->whereHas('author',function($query) use($userName){
+                $query->where('userName',$userName);
+            });
+        });
+        // return $query;
     }
 }
