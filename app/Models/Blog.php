@@ -34,6 +34,5 @@ class Blog extends Model
                 $query->where('userName',$userName);
             });
         });
-        // return $query;
     }
 }

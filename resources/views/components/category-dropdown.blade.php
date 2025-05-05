@@ -12,7 +12,7 @@
         <li>
           <a 
             class="dropdown-item" 
-            href="/?category={{$category->slug}}"
+            href="/?category={{$category->slug}}{{request('search')?'&search='.request('search'):''}}{{request('author')?'&author='.request('author'):''}}"
           >
             {{$category->name}}
           </a>

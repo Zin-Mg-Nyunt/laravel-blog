@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
-use App\Models\Author;
 use Illuminate\Support\Facades\Route;
-use App\Models\Category;
 
 Route::get('/', [BlogController::class,'index']);
 
