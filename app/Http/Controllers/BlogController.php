@@ -8,7 +8,10 @@ class BlogController extends Controller
 {
     public function index(){
         return view('blogs',[
-            "blogs"=>Blog::latest()->filter(request(['search','category','author']))->get(),
+            "blogs"=>Blog::latest()
+                            ->filter(request(['search','category','author']))
+                            ->paginate(6)
+                            ->withQueryString(),
         ]);
     }
     public function show(Blog $blog){ 
