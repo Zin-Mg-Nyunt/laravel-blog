@@ -7,7 +7,7 @@ use App\Models\Blog;
 class BlogController extends Controller
 {
     public function index(){
-        return view('blogs',[
+        return view('blogs.index',[
             "blogs"=>Blog::latest()
                             ->filter(request(['search','category','author']))
                             ->paginate(6)
@@ -15,7 +15,7 @@ class BlogController extends Controller
         ]);
     }
     public function show(Blog $blog){ 
-        return view('blog',[
+        return view('blogs.show',[
             "blog"=>$blog,
             "randomBlogs"=>Blog::inRandomOrder()->take(3)->get()
         ]);
