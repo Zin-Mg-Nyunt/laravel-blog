@@ -41,4 +41,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // accessors method
+    public function getNameAttribute($value){
+        return ucwords($value);
+    }
+
+    // mutators method
+    public function setPasswordAttribute($value){
+        $this->attributes['password']=bcrypt($value);
+    }
 }

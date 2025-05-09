@@ -19,5 +19,6 @@ class AuthController extends Controller
             'password'=>'required|min:8'
         ]);
         User::create($newUserData);
+        return redirect('/');
     }
 }
