@@ -19,7 +19,12 @@ class AuthController extends Controller
             'password'=>'required|min:8'
         ]);
         $user=User::create($newUserData);
-        // session()->flash('success','Welcome '.$user->name);
+        // login
+        auth()->login($user);
         return redirect('/')->with('success','Welcome '.$user->name);
+    }
+    public function logout(){
+        auth()->logout();
+        return redirect('/')->with('logout','Good bye for now');
     }
 }
