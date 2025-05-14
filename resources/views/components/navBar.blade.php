@@ -6,6 +6,7 @@
         <a href="/#blogs" class="nav-link">Blogs</a>
         @guest
           <a href="/register" class="nav-link">Register</a>
+          <a href="/login" class="nav-link">Login</a>
         @else
           <a class="nav-link">Welcome {{auth()->user()->name}}</a>
           <form action="/logout" method="POST">

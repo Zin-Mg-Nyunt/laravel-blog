@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 class AuthController extends Controller
 {
     public function create(){
-        return view('register.create');
+        return view('auth.register');
     }
     public function store(){
         $newUserData=request()->validate([
@@ -22,6 +22,17 @@ class AuthController extends Controller
         // login
         auth()->login($user);
         return redirect('/')->with('success','Welcome '.$user->name);
+    }
+    public function login(){
+        return view('auth.login');
+    }
+    public function post_login(){
+        //validation
+        request()->validate([
+            'email'=>['required','email',Rule::exists('users','email')],
+            'password'=>['required','min:8']
+        ]);
+        //auth attempt
     }
     public function logout(){
         auth()->logout();
