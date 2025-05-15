@@ -28,11 +28,18 @@ class AuthController extends Controller
     }
     public function post_login(){
         //validation
-        request()->validate([
+        $loginUserData=request()->validate([
             'email'=>['required','email',Rule::exists('users','email')],
             'password'=>['required','min:8']
         ]);
         //auth attempt
+        if(auth()->attempt($loginUserData)){
+            return redirect('/')->with('success','Welcome back '.auth()->user()->name);
+        }else{
+            return redirect()->back()->withErrors([
+                'email'=>'Invalid email or password'
+            ]);
+        }
     }
     public function logout(){
         auth()->logout();
