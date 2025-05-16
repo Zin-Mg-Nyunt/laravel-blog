@@ -1,6 +1,6 @@
 @props(['blog','randomBlogs'])
 <x-layout>
-    <!-- singloe blog section -->
+    <!-- single blog section -->
     <div class="container">
         <div class="row">
         <div class="col-md-6 mx-auto text-center">
@@ -27,6 +27,7 @@
         </div>
         </div>
     </div>
+    <x-comments/>
     <x-subscribe/>
     <x-blogsYouMayLike :blogs="$randomBlogs"/>
 </x-layout>
