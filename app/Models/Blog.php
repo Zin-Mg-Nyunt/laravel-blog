@@ -11,12 +11,15 @@ class Blog extends Model
     // protected $fillable = ['title','intro','body','slug'];
     protected $guarded=['id'];
     protected $with=['category','author'];
+
     public function category(){
         return $this->belongsTo(Category::class); //Category::class this syntx is for namespace
     }
+
     public function author(){
         return $this->belongsTo(Author::class);
     }
+
     public function scopeFilter($query,$filter){
         $query->when($filter['search']??false,function($query,$search){
             $query->where(function($query) use($search){
@@ -34,5 +37,9 @@ class Blog extends Model
                 $query->where('userName',$userName);
             });
         });
+    }
+    
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }
