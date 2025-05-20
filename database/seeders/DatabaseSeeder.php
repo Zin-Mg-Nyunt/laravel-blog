@@ -16,11 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::truncate();
-        Category::truncate();
-        Blog::truncate();
-        Author::truncate();
-
         $mgmg=Author::factory()->create(['name'=>'mg mg','userName'=>'mgmg']);
         $aungaung=Author::factory()->create(['name'=>'aung aung','userName'=>'aungaung']);
         $frontend=Category::factory()->create(['name'=>'frontend','slug'=>'frontend']);
