@@ -27,6 +27,27 @@
         </div>
         </div>
     </div>
+    <section>
+        <div class="container my-5">
+            <x-card-wrapper class="p-4">
+                <h5 class="mb-3">Leave a Comment</h5>
+                
+                <form>
+                    <div class="d-flex align-items-start mb-3">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar" class="rounded-circle me-3" width="50" height="50">
+                    
+                    <div class="flex-grow-1">
+                        <textarea class="form-control" rows="4" placeholder="Write your comment here..."></textarea>
+                    </div>
+                    </div>
+                    
+                    <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </div>
+                </form>
+            </x-card-wrapper>
+        </div>
+    </section>
     <x-comments :comments="$blog->comments"/>
     <x-subscribe/>
     <x-blogsYouMayLike :blogs="$randomBlogs"/>
