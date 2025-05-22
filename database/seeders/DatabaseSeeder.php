@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::factory(2)->create();
         $mgmg=Author::factory()->create(['name'=>'mg mg','userName'=>'mgmg']);
         $aungaung=Author::factory()->create(['name'=>'aung aung','userName'=>'aungaung']);
         $frontend=Category::factory()->create(['name'=>'frontend','slug'=>'frontend']);
