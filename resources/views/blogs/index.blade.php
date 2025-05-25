@@ -9,5 +9,4 @@
   <x-blogsSection 
     :blogs="$blogs"
   />
-  <x-subscribe/>
 </x-layout>
