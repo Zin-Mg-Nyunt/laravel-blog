@@ -19,12 +19,15 @@
             </a>
             <div class="text-secondary">{{$blog->created_at->diffForHumans()}}</div>
             <div class="text-secondary">
-                <form action="" method="POST">
-                    @if (Auth::user()->isSubscribe($blog))
-                    <button class="btn btn-danger mt-2">Unsubscribe</button>
-                    @else
-                    <button class="btn btn-warning mt-2">Subscribe</button>
-                    @endif
+                <form action="/blogs/{{$blog->slug}}/subscription" method="POST">
+                    @csrf
+                    @auth
+                        @if (Auth::user()->isSubscribe($blog))
+                        <button class="btn btn-danger mt-2">Unsubscribe</button>
+                        @else
+                        <button class="btn btn-warning mt-2">Subscribe</button>
+                        @endif
+                    @endauth
                 </form>
             </div>
         </div>

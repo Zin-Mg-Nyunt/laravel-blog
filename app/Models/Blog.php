@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Blog extends Model
 {
@@ -44,5 +45,13 @@ class Blog extends Model
 
     public function subscribers(){
         return $this->belongsToMany(User::class);
+    }
+
+    public function unSubscirbe(){
+        $this->subscribers()->detach(Auth::user()->id);
+    }
+
+    public function subscribe(){
+        $this->subscribers()->attach(Auth::user()->id);
     }
 }

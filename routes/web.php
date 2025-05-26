@@ -16,3 +16,5 @@ Route::post('/login',[AuthController::class,'post_login'])->middleware('guest');
 Route::post('/logout',[AuthController::class,'logout'])->middleware('auth');
 
 Route::post('/blogs/{blog:slug}/comments',[CommentController::class,'store']);
+
+Route::post('/blogs/{blog:slug}/subscription',[BlogController::class,'subscription']);
