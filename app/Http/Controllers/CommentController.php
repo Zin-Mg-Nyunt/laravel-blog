@@ -24,7 +24,7 @@ class CommentController extends Controller
         $subscribers=$blog->subscribers->filter(fn ($subscriber)=>$subscriber->id!=Auth::user()->id);
         $commenter=Auth::user();
         $comment=User::find(Auth::user()->id)->comments()->latest()->first();
-        $subscribers->each(fn($subscriber)=>Mail::to($subscriber->email)->send(new SubscriberMail($blog,$commenter,$comment)));
+        $subscribers->each(fn($subscriber)=>Mail::to($subscriber->email)->queue(new SubscriberMail($blog,$commenter,$comment)));
         return back();
     }
 }
