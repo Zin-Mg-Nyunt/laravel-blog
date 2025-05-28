@@ -18,3 +18,6 @@ Route::post('/logout',[AuthController::class,'logout'])->middleware('auth');
 Route::post('/blogs/{blog:slug}/comments',[CommentController::class,'store']);
 
 Route::post('/blogs/{blog:slug}/subscription',[BlogController::class,'subscription']);
+
+// admin routes
+Route::get('/admin/blogs/create',[BlogController::class,'create'])->middleware('admin');
