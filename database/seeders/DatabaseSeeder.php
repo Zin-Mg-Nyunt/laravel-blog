@@ -16,13 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create(['name'=>'kyaw aye','userName'=>'kyawaye','password'=>12345678]);
-        User::factory()->create(['name'=>'max','userName'=>'max','password'=>12345678]);
-        $mgmg=Author::factory()->create(['name'=>'mg mg','userName'=>'mgmg']);
-        $aungaung=Author::factory()->create(['name'=>'aung aung','userName'=>'aungaung']);
+        $kyawaye=User::factory()->create(['name'=>'kyaw aye','userName'=>'kyawaye','password'=>12345678]);
+        $max=User::factory()->create(['name'=>'max','userName'=>'max','password'=>12345678]);
         $frontend=Category::factory()->create(['name'=>'frontend','slug'=>'frontend']);
         $backend=Category::factory()->create(['name'=>'backend','slug'=>'backend']);
-        Blog::factory(2)->create(['category_id'=>$frontend->id,'author_id'=>$mgmg]);
-        Blog::factory(2)->create(['category_id'=>$backend->id,'author_id'=>$aungaung]);
+        Blog::factory(2)->create(['category_id'=>$frontend->id,'user_id'=>$kyawaye]);
+        Blog::factory(2)->create(['category_id'=>$backend->id,'user_id'=>$max]);
     }
 }

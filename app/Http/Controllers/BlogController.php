@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,6 +34,8 @@ class BlogController extends Controller
     }
     public function create(){
         
-        return view('blogs.create');
+        return view('blogs.create',[
+            'categories'=>Category::all()
+        ]);
     }
 }
