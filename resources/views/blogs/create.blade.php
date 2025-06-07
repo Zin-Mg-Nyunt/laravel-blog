@@ -1,7 +1,7 @@
 <x-layout>
     <x-card-wrapper class="container my-5 p-5">
         <h3 class="mb-5">Blog Create Form</h3>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
         @csrf
 
             <!-- Title -->
@@ -35,7 +35,13 @@
                     {{old('body')}}
                 </textarea>
                 <x-error name="body" />
+            </div>
 
+            <!-- Thumbnail -->
+            <div class="mb-3">
+                <label for="thumbnail" class="form-label">Thumbnail</label>
+                <input type="file" name="thumbnail" id="thumbnail" class="form-control" required>
+                <x-error name="thumbnail" />
             </div>
 
             <!-- Category -->
@@ -46,6 +52,7 @@
                         <option {{$category->id==old('category_id')? 'selected':''}} value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
+                <x-error name="category_id" />
             </div>
 
             <!-- Submit -->
