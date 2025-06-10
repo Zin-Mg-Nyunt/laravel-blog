@@ -6,7 +6,7 @@
 
             <x-form.input name="title"/>
             <x-form.input name="slug"/>
-            <x-form.textarea name="intro"/>
+            <x-form.input name="intro"/>
             <x-form.textarea name="body" rows=8/>
             <x-form.input name="thumbnail" type="file"/>
             <x-form.input-wrapper name="category">
