@@ -36,7 +36,12 @@ class AuthController extends Controller
         ]);
         //auth attempt
         if(Auth::attempt($loginUserData)){
-            return redirect('/')->with('success','Welcome back '.Auth::user()->name);
+        // check admin or not
+            if (Auth::user()->is_admin) {
+                return redirect('/admin/blogs')->with('success','Welcome back admin '.Auth::user()->name);
+            }else{
+                return redirect('/')->with('success','Welcome back '.Auth::user()->name);
+            }
         }else{
             return redirect()->back()->withErrors([
                 'email'=>'Invalid email or password'

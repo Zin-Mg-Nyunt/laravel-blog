@@ -12,7 +12,9 @@ class AdminBlogController extends Controller
 {
     //
     public function index(){
-        return view('admin.blogs.index');
+        return view('admin.blogs.index',[
+            "blogs"=>Blog::latest()->paginate(3),
+        ]);
     }
     public function create(){
         
@@ -34,5 +36,9 @@ class AdminBlogController extends Controller
         $formData['thumbnail']=$path;
         Blog::create($formData);
         return redirect('/');
+    }
+    public function destroy(Blog $blog){
+        $blog->delete();
+        return back();
     }
 }
