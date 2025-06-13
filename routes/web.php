@@ -25,3 +25,4 @@ Route::get('/admin/blogs',[AdminBlogController::class,'index'])->middleware('adm
 Route::get('/admin/blogs/create',[AdminBlogController::class,'create'])->middleware('admin');
 Route::post('/admin/blogs/create',[AdminBlogController::class,'store'])->middleware('admin');
 Route::delete('/admin/blogs/{blog:slug}/delete',[AdminBlogController::class,'destroy'])->middleware('admin');
+Route::get('/admin/blogs/{blog:slug}/edit',[AdminBlogController::class,'edit'])->middleware('admin');

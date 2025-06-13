@@ -205,7 +205,6 @@ const editorConfig = {
 			'ckboxImageEdit'
 		]
 	},
-	initialData:'',
 	licenseKey: LICENSE_KEY,
 	link: {
 		addTargetToExternalLinks: true,
