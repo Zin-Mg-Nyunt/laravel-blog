@@ -1,4 +1,4 @@
-<x-layout>
+<x-admin-layout>
     <x-card-wrapper class="container my-5 p-5">
         <h3 class="mb-5">Blog Create Form</h3>
         <form action="" method="POST" enctype="multipart/form-data">
@@ -23,4 +23,4 @@
         </form>
     </x-card-wrapper>
 
-</x-layout>
+</x-admin-layout>

@@ -13,7 +13,6 @@
     />
 
     {{-- ckeditor css --}}
-    <link rel="stylesheet" href="/ckeditor/style.css">
 		<link rel="stylesheet" href="/ckeditor/ckeditor5.css">
   </head>
   <body id="home">

@@ -32,7 +32,7 @@
             </div>
         </div>
         <p class="lh-md text-start mt-3">
-            {{$blog->body}}
+            {!!$blog->body!!}
         </p>
     </div>
     </div>
