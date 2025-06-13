@@ -1,9 +1,9 @@
 <x-admin-layout>
     <x-card-wrapper class="container my-5 p-5">
         <h3 class="mb-5 text-center">Blog Edit Form</h3>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/admin/blogs/{{$blog->slug}}/update" method="POST" enctype="multipart/form-data">
         @csrf
-
+        @method("PATCH")
             <x-form.input name="title" value="{{$blog->title}}"/>
             <x-form.input name="slug" value="{{$blog->slug}}"/>
             <x-form.input name="intro" value="{{$blog->intro}}"/>
