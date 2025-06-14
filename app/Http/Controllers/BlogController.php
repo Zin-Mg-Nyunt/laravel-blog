@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Gate;
+// use \Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class BlogController extends Controller
 {
+    // use AuthorizesRequests;
+
     public function index(){
+    // Gate::allows('admin');
+    // dd($this->authorize('admin'));
         return view('blogs.index',[
             "blogs"=>Blog::latest()
                             ->filter(request(['search','category','author']))
